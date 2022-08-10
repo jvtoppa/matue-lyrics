@@ -2,15 +2,17 @@ import time
 import tweepy
 import random
 import linecache
-import creds
+import os
+from boto.s3.connection import S3Connection
 
+s3 = S3Connection(os.environ['OAuth1'], os.environ['OAuth2'], os.environ['OAuth3'], os.environ['OAuth4'])
 #auth key
-auth = tweepy.OAuth1UserHandler(creds.oauth1, creds.oauth2, creds.oauth3, creds.oauth4)
+auth = tweepy.OAuth1UserHandler(OAuth1, OAuth2, OAuth3, OAuth4)
 #api call
 api = tweepy.API(auth)
 while True:
     #abre letras
-    with open("tue_musicas.txt", 'r', encoding="utf-8") as file:
+    with open("C:\\Users\\T-Gamer\\Desktop\\área de trabalho\\botpy\\tue_musicas.txt", 'r', encoding="utf-8") as file:
     #le as linhas e seleciona uma linha aleatoriamente
         x = len(file.readlines())
 
@@ -28,9 +30,9 @@ while True:
 
 
     print(line+line2)
-    api.update_status(status=line+line2)
+    #api.update_status(status=line+line2)
     #espera uma hora (aparece no console)
-    for i in reversed(range(1,3600)):
+    for i in reversed(range(1,2)):
 
         print(f"{i}   ", end="\r", flush=True)
         time.sleep(1)
