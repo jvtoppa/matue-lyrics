@@ -7,7 +7,7 @@ from boto.s3.connection import S3Connection
 
 s3 = S3Connection(os.environ['OAuth1'], os.environ['OAuth2'], os.environ['OAuth3'], os.environ['OAuth4'])
 #auth key
-auth = tweepy.OAuth1UserHandler(OAuth1, OAuth2, OAuth3, OAuth4)
+auth = tweepy.OAuth1UserHandler(s3)
 #api call
 api = tweepy.API(auth)
 while True:
