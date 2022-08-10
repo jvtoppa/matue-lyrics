@@ -5,10 +5,10 @@ import linecache
 import os
 from boto.s3.connection import S3Connection
 
-s1 = S3Connection(os.environ['OAuth1'])
-s2 = S3Connection(os.environ['OAuth2'])
-s3 = S3Connection(os.environ['OAuth3'])
-s4 = S3Connection(os.environ['OAuth4'])
+s1 = os.environ['OAuth1']
+s2 = os.environ['OAuth2']
+s3 = os.environ['OAuth3']
+s4 = os.environ['OAuth4']
 #auth key
 auth = tweepy.OAuth1UserHandler(s1, s2, s3, s4)
 #api call
