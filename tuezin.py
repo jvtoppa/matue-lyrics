@@ -30,7 +30,7 @@ while True:
 
 
     print(line+line2)
-    #api.update_status(status=line+line2)
+    api.update_status(status=line+line2)
     #espera uma hora (aparece no console)
     for i in reversed(range(1,2)):
 
