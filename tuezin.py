@@ -35,7 +35,7 @@ while True:
     print(line+line2)
     api.update_status(status=line+line2)
     #espera uma hora (aparece no console)
-    for i in reversed(range(1,2)):
+    for i in reversed(range(1,3600)):
 
         print(f"{i}   ", end="\r", flush=True)
         time.sleep(1)
